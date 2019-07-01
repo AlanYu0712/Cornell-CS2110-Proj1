@@ -8,28 +8,56 @@ class ExercisesTest {
 	
 
 	@Test
-	void test() {
+	void test_Palindrome() {
+		
+		
 		Exercises e = new Exercises();
-		String s= "hannah";
-		String s1 = "To day was good.";
-		int a [] = new int[5];
-		int a2 [] [] = new int[5][5];
-		for(int i =0; i<5; i++) {
-			a[i]= i;
-		}for(int j =0; j<5; j++) {		
-			for(int i =0; i<5; i++) {
-			a2[i][j]= 1;
-		}
-		}
-		assertEquals(e.isPalindrome(s),true);
-		assertEquals(e.normalize(s1),"Todaywasgood");
-		assertEquals(e.numZeros(a),1);
-		assertEquals(e.mean(a),2);
-		assertEquals(e.median(a),2);
-		assertEquals(e.hasConstDiagonal(a2),true);
+		
+		assertEquals(true, e.isPalindrome("Radar"));
+
 		
 	}
 	
+	
+	@Test
+	void test_Normalize() {
+		Exercises e = new Exercises();
+		
+		assertEquals("Java", e.normalize("J a:;v. a,"));
+	}
+	
+	
+	@Test
+	void test_Median() {
+		Exercises e = new Exercises();
+		
+		int[] checker1 = {3,5,1,2,4};
+		
+		assertEquals(3, e.median(checker1));
+		
+		int[] checker2 = {8,4,2,6};
+		
+		assertEquals(6, e.median(checker2));
+	}
+	
+	
+	@Test
+	void test_num0s() {
+		Exercises e = new Exercises();
+		
+		int[] checker = {2,0,1,9,6,3,0};
+		
+		assertEquals(2, e.numZeros(checker));
+		
+	}
+	
+	
+	@Test
+	void test_mean() {
+		Exercises e = new Exercises();
+		
+		int[] checker = {1,3,5,7,9,2,4,6,8,10};		
+	}
 	
 	@Test
 	void test_Diag() {

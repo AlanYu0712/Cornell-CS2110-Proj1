@@ -10,8 +10,10 @@ public class Exercises {
 	 * @return whether the string is the same backwards and forwards.
 	 */
 	public static boolean isPalindrome(String s) {
+		s=s.toLowerCase();
+
 		for(int i=0; i<s.length(); i++) {
-			if (s.charAt(i)!=s.charAt(s.length()-1-i)) {
+			if (s.charAt(i)!= s.charAt(s.length()-1-i)) {
 				return false;
 			}
 		}
@@ -47,7 +49,7 @@ public class Exercises {
 			result = values[(values.length-1)/2];
 			
 		} else if(values.length%2 == 0) {
-			result = (values[values.length/2] + values[(values.length/2)-1])/2;
+			result = (values[values.length/2]);
 		}
 		
 		
@@ -99,9 +101,9 @@ public class Exercises {
 		
 		int Right2Left = values[values.length-1][0];
 		
-		for (int i=1; i<values[0].length; i++) {
+		for (int i=0; i<values[0].length; i++) {
 			
-			if(Left2Right == values[i][i] && Right2Left == values[values.length-i][i]) {
+			if(Left2Right == values[i][i] && Right2Left == values[values.length-(1+i)][i]) {
 				pass = true;
 			} else {
 				pass = false;
@@ -111,7 +113,7 @@ public class Exercises {
 		}
 		
 		
-		return true;
+		return pass;
 		
 
 	}
