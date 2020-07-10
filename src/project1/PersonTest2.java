@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 class PersonTest2 {
 
-	
 	static Person testCase() {
 		return new Person("Mike", 1983, 5, 8);
 	}
